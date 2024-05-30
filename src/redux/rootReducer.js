@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import moviesReducer from '../moviesSlice'; // Assuming moviesSlice.js contains the movies reducer
+import moviesReducer from './moviesSlice'; // Assuming moviesSlice.js contains the movies reducer
 // Import other reducers as needed
 // import userReducer from './userSlice';
 const rootReducer = combineReducers({

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMovies } from '../moviesSlice';
+import { fetchMovies } from '../redux/moviesSlice';
 import MovieCard from './MovieCard';
 const CardGrid = () => {
 const dispatch = useDispatch();

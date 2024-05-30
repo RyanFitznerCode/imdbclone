@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMovieById } from '../moviesSlice';
+import { fetchMovieById } from '../redux/moviesSlice';
 const MovieDetails = ({ match }) => {
 const movieId = match.params.id; // Assuming React Router v5 is used for routing
 const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { searchMovies } from '../moviesSlice';
+import { searchMovies } from '../redux/moviesSlice';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
 const [searchTerm, setSearchTerm] = useState('');

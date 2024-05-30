@@ -7,7 +7,7 @@ return (
 <img src={imageUrl} alt={movie.title} />
 <div className="movie-info">
 <h3>{movie.title}</h3>
-<p>{movie.overview.substring(0, 100)}...<span>more</span></p> // Shows the first 100 characters of the overview
+<p>{movie.overview.substring(0, 100)}...<span>more</span></p> 
 </div>
 </div>
 );

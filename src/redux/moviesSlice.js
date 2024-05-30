@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchMoviesByCategory, fetchMovieDetails, searchMovies as searchMoviesApi } from
-'./api/tmdb';
+'../api/tmdb';
 // Existing thunks
 export const fetchMovies = createAsyncThunk(
 'movies/fetchMovies',
