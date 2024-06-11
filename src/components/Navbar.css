@@ -1,0 +1,78 @@
+.navbar {
+    background-color: #630bba;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  .logo img {
+    width: 80px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar form {
+    display: flex;
+  }
+  
+  .navbar input,
+  .navbar button {
+    padding: 10px;
+    margin-left: 5px;
+  }
+  
+  .navbar button {
+    background-color: #555;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .google-login-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    margin: 0 10px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  }
+  

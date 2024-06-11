@@ -1,33 +1,49 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { searchMovies } from '../redux/moviesSlice';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
+
 const Navbar = () => {
-const [searchTerm, setSearchTerm] = useState('');
-const dispatch = useDispatch();
-const handleSearch = (event) => {
-event.preventDefault();
-if (searchTerm.trim()) {
-dispatch(searchMovies(searchTerm));
-}
+  const [searchTerm, setSearchTerm] = useState("");
+  const [menuActive, setMenuActive] = useState(false);
+  const navigate = useNavigate();
+
+
+
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?q=${searchTerm}`);
+    }
+  };
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
+  return (
+    <nav className="navbar">
+      <form onSubmit={handleSearch} className="search-form">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div className="hamburger" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className={`hamburger-menu ${menuActive ? "active" : ""}`}>
+        <Link to="/" onClick={toggleMenu}>
+          Home
+        </Link>
+      </div>
+    </nav>
+  );
 };
-return (
-<nav className="navbar">
-<div className="logo">
-<Link to="/">TMDB Clone</Link>
-</div>
-<form onSubmit={handleSearch} className="search-form">
-<input
-type="text"
-placeholder="Search movies..."
-value={searchTerm}
-onChange={(e) => setSearchTerm(e.target.value)}
-/>
-<button type="submit">Search</button>
-</form>
-</nav>
-);
-};
+
 export default Navbar;
-
-

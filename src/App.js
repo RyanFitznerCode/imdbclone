@@ -6,8 +6,9 @@ import Navbar from './components/Navbar';
 import CardGrid from './components/CardGrid';
 import MovieCard from './components/MovieCard';
 import MovieDetails from './components/MovieDetails';
+import SearchResults from "./components/SearchResults";
+import CategoryMovies from "./components/CategoryMovies";
 import './App.css';
-import Home from './components/Home';
 
 
 function App() {
@@ -16,10 +17,11 @@ return (
 <Router>
 <Navbar />
 <Routes>
-<Route path="/" element={<Home />} />
+<Route path="/" element={<CardGrid />} />
+<Route path="/search" element={<SearchResults />} />
 <Route path="/moviecard" element={<MovieCard />} />
-<Route path="/cardgrid" element={<CardGrid />} />
 <Route path="/movie/:id" element={<MovieDetails />} />
+<Route path="/category/:categoryOrGenre" element={<CategoryMovies />} />
 </Routes>
 </Router>
 </div>
